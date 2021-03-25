@@ -21,9 +21,7 @@ DBClient.connect(connectionString, { useUnifiedTopology: true })
 
         app.post('/add', (req, res) => {
             collection.insertOne(req.body)
-            .then(result => {
-                result.
-            })
+            .then(res.redirect('/'))
             .catch(error => console.log(error));
         });
 

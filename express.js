@@ -4,6 +4,9 @@ const port = 7000;
 
 //Create data 
 //app.post()
+app.post('/add', (req, res) => {
+    console.log('Alo alo :))))');
+});
 
 //Read data
 //Route definition 

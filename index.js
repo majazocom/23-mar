@@ -19,6 +19,17 @@ DBClient.connect(connectionString, { useUnifiedTopology: true })
             //res.json([{"name": "Mooncake"},{"name": "DJ Spinderella"},{"name": "Kapten Katt"},{"name": "Sir Meowsalot"},{"name": "Misse Manson"},{"name": "Sivert"}]);
         });
 
+        //get på kattnamn
+        app.get('/getCatnames', (req,res) => {
+            collection.find().toArray()
+            .then(result => {
+                //skicka användaren till en viss komponent med resultatet som props
+                
+                console.log(result)
+            })
+            .catch(error => console.log(error))
+        })
+
         app.post('/add', (req, res) => {
             collection.insertOne(req.body)
             .then(res.redirect('/'))
